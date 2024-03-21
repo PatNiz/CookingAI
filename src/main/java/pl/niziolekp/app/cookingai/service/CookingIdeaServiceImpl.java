@@ -19,9 +19,7 @@ public class CookingIdeaServiceImpl implements CookingIdeaService {
         String allProducts = String.join(",", products);
         String question = "I have in fridge" + allProducts + ".What can I do for breakfast? Give me 3 ideas.";
         StringBuilder stringBuilder = new StringBuilder();
-        //chatGPTHelper.getChatGPTOutput(question, stringBuilder);
-        stringBuilder.append("Idea: ");
-        stringBuilder.append(allProducts);
+        chatGPTHelper.getChatGPTOutput(question, stringBuilder);
         return stringBuilder.toString();
     }
 }
